@@ -1,0 +1,55 @@
+{
+  "name": "my-advanced-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pm2:dev": "pm2 start lib/server.js --watch --name 'my-server' --interpreter babel-node",
+    "pm2:stop": "pm2 stop my-server",
+    "pm2:restart": "pm2 restart my-server",
+    "pm2:monitor": "pm2 monitor",
+    "pm2:logs": "pm2 logs",
+    "pm2:delete": "pm2 delete my-server",
+    "start:dev": "babel-node lib/server.js",
+    "webpack": "webpack -wd"
+  },
+  "keywords": [],
+  "author": "jiazhenghao <jiazhenghao0203@hotmail.com> (https://github.com/jiazhenghao)",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "6.6.0",
+    "eslint-plugin-react": "7.16.0",
+    "webpack-cli": "3.3.10"
+  },
+  "dependencies": {
+    "@babel/cli": "7.7.0",
+    "@babel/core": "7.7.2",
+    "@babel/node": "7.7.0",
+    "@babel/plugin-proposal-class-properties": "7.7.0",
+    "@babel/polyfill": "7.7.0",
+    "@babel/preset-env": "7.7.1",
+    "@babel/preset-react": "7.7.0",
+    "babel-loader": "8.0.6",
+    "core-js": "3.4.0",
+    "ejs": "2.7.1",
+    "express": "4.17.1",
+    "pm2": "4.1.2",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "regenerator-runtime": "0.13.3",
+    "webpack": "4.41.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  }
+}
