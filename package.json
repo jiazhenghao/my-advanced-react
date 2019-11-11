@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch",
     "pm2:dev": "pm2 start lib/server.js --watch --name 'my-server' --interpreter babel-node",
     "pm2:stop": "pm2 stop my-server",
     "pm2:restart": "pm2 restart my-server",
@@ -23,6 +23,7 @@
   "devDependencies": {
     "eslint": "6.6.0",
     "eslint-plugin-react": "7.16.0",
+    "jest": "24.9.0",
     "webpack-cli": "3.3.10"
   },
   "dependencies": {
