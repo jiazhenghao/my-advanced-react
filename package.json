@@ -21,6 +21,8 @@
   "author": "jiazhenghao <jiazhenghao0203@hotmail.com> (https://github.com/jiazhenghao)",
   "license": "MIT",
   "devDependencies": {
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.15.1",
     "eslint": "6.6.0",
     "eslint-plugin-react": "7.16.0",
     "jest": "24.9.0",
@@ -41,6 +43,7 @@
     "ejs": "2.7.1",
     "express": "4.17.1",
     "pm2": "4.1.2",
+    "prop-types": "15.7.2",
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "regenerator-runtime": "0.13.3",
@@ -53,6 +56,14 @@
     ],
     "plugins": [
       "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/lib"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/lib/jest.setup.js"
     ]
   }
 }
