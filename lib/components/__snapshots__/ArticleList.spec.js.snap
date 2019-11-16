@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`artilclist renders correctly 1`] = `ShallowWrapper {}`;
+exports[`ArtilcList renders correctly 1`] = `ShallowWrapper {}`;
