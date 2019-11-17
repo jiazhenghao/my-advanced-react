@@ -9,14 +9,19 @@
   "scripts": {
     "test": "jest --watch",
     "coverage": "jest --coverage",
-    "pm2:dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --name 'my-server' --interpreter babel-node",
+    "pm2:start": "NODE_PATH=./lib pm2 start lib/server.js --watch --name 'my-server' --interpreter babel-node",
     "pm2:stop": "pm2 stop my-server",
     "pm2:restart": "pm2 restart my-server",
     "pm2:monitor": "pm2 monitor",
     "pm2:logs": "pm2 logs",
     "pm2:delete": "pm2 delete my-server",
+    "pm2:delete-all": "pm2 delete all",
+    "start-prod": "NODE_ENV=production NODE_PATH=./build pm2 start build/server.js --name 'prod-server' -i max",
     "start:dev": "babel-node lib/server.js",
-    "webpack": "webpack -wd"
+    "status": "pm2 status",
+    "webpack": "webpack -wd",
+    "build-webpack": "webpack -p",
+    "build-node": "babel lib -d build --copy-files"
   },
   "keywords": [],
   "author": "jiazhenghao <jiazhenghao0203@hotmail.com> (https://github.com/jiazhenghao)",
@@ -27,7 +32,7 @@
     "eslint": "6.6.0",
     "eslint-plugin-react": "7.16.0",
     "jest": "24.9.0",
-    "react-test-renderer": "16.11.0",
+    "react-test-renderer": "16.12.0",
     "webpack-cli": "3.3.10"
   },
   "dependencies": {
@@ -40,21 +45,28 @@
     "@babel/preset-react": "7.7.0",
     "axios": "0.19.0",
     "babel-loader": "8.0.6",
-    "core-js": "3.4.0",
-    "ejs": "2.7.1",
+    "core-js": "3.4.1",
+    "ejs": "2.7.2",
     "express": "4.17.1",
     "lodash": "4.17.15",
     "pm2": "4.1.2",
     "prop-types": "15.7.2",
-    "react": "16.11.0",
-    "react-dom": "16.11.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
     "regenerator-runtime": "0.13.3",
     "webpack": "4.41.2"
   },
   "babel": {
     "presets": [
       "@babel/preset-react",
-      "@babel/preset-env"
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
     ],
     "plugins": [
       "@babel/plugin-proposal-class-properties"
