@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "jest --watch",
+    "coverage": "jest --coverage",
     "pm2:dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --name 'my-server' --interpreter babel-node",
     "pm2:stop": "pm2 stop my-server",
     "pm2:restart": "pm2 restart my-server",
